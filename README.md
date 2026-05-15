@@ -1,27 +1,6 @@
 # Namma-Raste Health 🛣️
 
-<p align="center">
-  <b>AI-Powered Road Infrastructure Monitoring System for Bengaluru</b>
-</p>
-
-<p align="center">
-  Monitor • Analyze • Report • Improve
-</p>
-
----
-
-## 📌 Overview
-
-**Namma-Raste Health** is a smart Android-based infrastructure monitoring application developed to digitally assess, monitor, and manage the structural health of roads across Bengaluru.
-
-The application enables authorities and users to:
-- Register road assets
-- Capture road damage reports with visual evidence
-- Track infrastructure conditions using telemetry data
-- Visualize city-wide damage distribution on maps
-- Generate analytical insights for maintenance prioritization
-
-The platform combines geospatial intelligence, damage diagnostics, and real-time infrastructure analytics into a unified mobile solution.
+**Namma-Raste Health** is a modern Android application designed to monitor and track the structural health of road infrastructure in Bengaluru. Built with a focus on data-driven maintenance, it allows users and officials to catalog road conditions, report damages with visual evidence, and assess maintenance priorities using a telemetry-based health scoring system.
 
 ---
 
@@ -30,135 +9,110 @@ The platform combines geospatial intelligence, damage diagnostics, and real-time
 ## 🏙 City Health Dashboard
 
 <p align="center">
-  <img src="screenshots/dashboard.png" width="260"/>
+  <img src="https://raw.githubusercontent.com/Nidhirk2113/Namma_Raste_Health/main/Screenshots/City_health_overview_screen.png" width="260"/>
 </p>
 
-Provides a real-time overview of road infrastructure statistics including:
-- Total roads monitored
-- Open maintenance cases
-- Damage severity indicators
-- Traffic and infrastructure metrics
+Provides a real-time overview of infrastructure health including road statistics, active reports, operational metrics, and maintenance indicators.
 
 ---
 
 ## 🛣 Infrastructure Directory
 
 <p align="center">
-  <img src="screenshots/infrastructure_directory.png" width="260"/>
+  <img src="https://raw.githubusercontent.com/Nidhirk2113/Namma_Raste_Health/main/Screenshots/Infrastructure_directory_screen.png" width="260"/>
 </p>
 
-Enables:
-- Road asset registration
-- Advanced infrastructure search
-- Maintenance classification
-- Operational status tracking
+A centralized infrastructure management module with road registration, smart search, operational filtering, and maintenance categorization.
 
 ---
 
 ## 🔍 Diagnostic Scan System
 
 <p align="center">
-  <img src="screenshots/diagnostic_scan.png" width="260"/>
+  <img src="https://raw.githubusercontent.com/Nidhirk2113/Namma_Raste_Health/main/Screenshots/Diagnostic_scan_screen.png" width="260"/>
 </p>
 
-Integrated damage reporting system featuring:
-- CameraX image capture
+Capture and submit structural damage reports with:
+- CameraX image evidence
 - GPS telemetry
 - Damage classification
-- Incident documentation
-- Structural analysis logging
+- Timestamp logging
+- Diagnostic analysis notes
 
 ---
 
 ## 🗺 Live Damage Map
 
 <p align="center">
-  <img src="screenshots/live_damage_map.png" width="260"/>
+  <img src="https://raw.githubusercontent.com/Nidhirk2113/Namma_Raste_Health/main/Screenshots/Live_Damage_maps_screen.png" width="260"/>
 </p>
 
-Google Maps powered visualization system for:
-- Real-time issue tracking
-- Damage hotspot analysis
-- Geographical infrastructure monitoring
-- Maintenance coordination
+Google Maps powered visualization system for monitoring reported infrastructure damage and identifying maintenance hotspots across the city.
 
 ---
 
 ## 📊 Infrastructure Quality Rankings
 
 <p align="center">
-  <img src="screenshots/safety_rankings.png" width="260"/>
+  <img src="https://raw.githubusercontent.com/Nidhirk2113/Namma_Raste_Health/main/Screenshots/safety_rankings_screen.png" width="260"/>
 </p>
 
-Ranks infrastructure quality based on:
-- Damage severity
-- Traffic load
-- Structural degradation
-- Repair urgency metrics
+Ranks infrastructure quality based on telemetry metrics, traffic exposure, structural degradation, and maintenance urgency.
 
 ---
 
-# 🚀 Core Features
+## 🚀 Key Features
 
-## ✅ Smart Infrastructure Monitoring
-Track and monitor road conditions through a centralized digital platform.
+- **City Health Dashboard**: Real-time overview of Bengaluru's road network, including average damage levels, traffic flow statistics, and high-priority maintenance alerts.
 
-## ✅ Real-Time Damage Reporting
-Submit structural damage reports with:
-- GPS coordinates
-- Camera evidence
-- Damage category tagging
-- Timestamp logging
+- **Infrastructure Directory**: A comprehensive list of road assets with advanced search and operational filtering.
 
-## ✅ Infrastructure Analytics
-Analyze:
-- Traffic intensity
-- Pothole density
-- Maintenance trends
-- Infrastructure deterioration
+- **Diagnostic Scans (Reporting)**: Capture structural damage reports including:
+    - **CameraX Integration** for visual evidence
+    - **GPS Telemetry** for accurate location tracking
+    - Damage classification and timestamp logging
 
-## ✅ Google Maps Integration
-Visualize road assets and incidents geographically using interactive mapping.
+- **Detailed Road Metrics**:
+    - Pothole counts
+    - Traffic flow analysis
+    - Drainage and streetlight integrity
+    - Estimated repair costs
+    - Contractor and maintenance tracking
 
-## ✅ PDF Report Generation
-Generate professional infrastructure health certificates and maintenance summaries.
+- **PDF Health Certificates**: Export infrastructure health reports for inspections and documentation.
 
-## ✅ Telemetry-Based Assessment
-Evaluate infrastructure using multiple operational metrics and scoring systems.
+- **Live Damage Map**: Real-time geographical visualization of reported infrastructure damage using Google Maps.
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
-| Category | Technology |
-|---|---|
-| Language | Kotlin |
-| Architecture | MVVM |
-| UI Framework | Material Design 3 |
-| Database | Room Database |
-| Navigation | Jetpack Navigation Component |
-| Async Operations | Kotlin Coroutines |
-| Maps | Google Maps SDK |
-| Location Services | Fused Location Provider |
-| Camera Integration | CameraX |
-| Charts & Analytics | MPAndroidChart |
-| UI Binding | ViewBinding |
+- **Language**: Kotlin
+- **Architecture**: MVVM (Model-View-ViewModel)
+- **UI Framework**: Material Design 3
+- **Jetpack Libraries**:
+    - ViewBinding
+    - Navigation Component
+    - Room Database
+    - ViewModel & LiveData
+    - CameraX
+- **External Dependencies**:
+    - Google Maps SDK
+    - Fused Location Provider
+    - MPAndroidChart
+    - Kotlin Coroutines
 
 ---
 
-# 🏗 Architecture Overview
-
-The application follows the **MVVM (Model-View-ViewModel)** architecture pattern for scalable and maintainable Android development.
+## 🏗 Project Structure
 
 ```text
 com.nammaraste.health
-│
 ├── data
 │   ├── local
 │   │   ├── dao
 │   │   ├── entity
 │   │   └── database
-│   │
 │   └── repository
 │
 ├── ui
@@ -176,9 +130,9 @@ com.nammaraste.health
 
 ---
 
-# 🗄 Database System
+## 🗄 Database & Migrations
 
-The application uses **Room Database** for local persistent storage with migration support.
+The app utilizes a Room database (`namma_raste_db`) with migration support for scalable infrastructure monitoring.
 
 ### Key Tables
 - `roads`
@@ -188,34 +142,30 @@ The application uses **Room Database** for local persistent storage with migrati
 
 ### Infrastructure Metrics Captured
 - Pothole count
-- Traffic flow
+- Traffic density
 - Structural crack severity
-- Accident risk score
 - Drainage condition
+- Accident risk score
 - Estimated repair cost
 - Maintenance status
 
 ---
 
-# ⚙️ Installation Guide
+## ⚙️ Installation
 
-## 1️⃣ Clone Repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Nidhirk2113/Namma-Raste-Health.git
+git clone https://github.com/Nidhirk2113/Namma_Raste_Health.git
 ```
 
----
-
-## 2️⃣ Open in Android Studio
+### 2. Open in Android Studio
 
 Recommended:
-- Android Studio Ladybug / Panda or newer
-- JDK 17+
+- Android Studio Panda / Ladybug or newer
+- Java 17+
 
----
-
-## 3️⃣ Configure Google Maps API
+### 3. Configure Google Maps API Key
 
 Add your API key inside:
 
@@ -229,65 +179,61 @@ Example:
 MAPS_API_KEY=YOUR_API_KEY
 ```
 
----
-
-## 4️⃣ Build & Run
+### 4. Build & Run
 
 - Sync Gradle
-- Connect emulator/device
-- Run `app` module
+- Connect emulator or Android device
+- Run the `app` module
 
-Minimum SDK Supported:
+Minimum SDK:
 - Android 8.0 (API 26)
 
 ---
 
-# 📈 Future Enhancements
+## 📈 Future Enhancements
 
 - AI-based pothole detection using TensorFlow Lite
-- Cloud synchronization with Firebase
+- Firebase cloud synchronization
 - Predictive maintenance analytics
 - IoT sensor integration
-- Government maintenance dashboard
-- Offline-first synchronization
-- Live citizen reporting portal
+- Government monitoring dashboard
+- Offline-first infrastructure synchronization
 
 ---
 
-# 🎯 Project Objectives
+## 🎯 Project Objectives
 
 - Improve urban road maintenance efficiency
 - Digitize infrastructure monitoring workflows
 - Reduce manual inspection overhead
-- Enable faster maintenance prioritization
-- Provide data-driven infrastructure insights
+- Enable data-driven maintenance prioritization
+- Improve infrastructure safety analytics
 
 ---
 
-# 🔐 Permissions Used
+## 🔐 Permissions Used
 
 | Permission | Purpose |
 |---|---|
-| Camera | Capture damage evidence |
+| Camera | Capture structural damage evidence |
 | Location | GPS telemetry |
-| Storage | Save reports & PDFs |
-| Internet | Maps & cloud services |
+| Storage | Save reports and PDFs |
+| Internet | Maps and network operations |
 
 ---
 
-# 👨‍💻 Developed With
+## 👨‍💻 Developed Using
 
 - Kotlin
 - Android Jetpack
-- Material Design Principles
+- Material Design 3
 - Google Maps Platform
+- Room Persistence Library
 
 ---
 
-# 📄 License
+## 📄 License
 
 Copyright © 2026 Namma-Raste Health
 
-Developed for smart urban infrastructure monitoring and road safety analytics in Bengaluru.
-
-All rights reserved.
+Developed for Bengaluru's urban infrastructure monitoring and road safety analytics.
