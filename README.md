@@ -1,91 +1,293 @@
 # Namma-Raste Health 🛣️
 
-**Namma-Raste Health** is a modern Android application designed to monitor and track the structural health of road infrastructure in Bengaluru. Built with a focus on data-driven maintenance, it allows users and officials to catalog road conditions, report damages with visual evidence, and assess maintenance priorities using a telemetry-based health scoring system.
+<p align="center">
+  <b>AI-Powered Road Infrastructure Monitoring System for Bengaluru</b>
+</p>
+
+<p align="center">
+  Monitor • Analyze • Report • Improve
+</p>
 
 ---
 
-## 🚀 Key Features
+## 📌 Overview
 
-- **City Health Dashboard**: Real-time overview of Bengaluru's road network, including average damage levels, traffic flow statistics, and high-priority maintenance alerts.
-- **Infrastructure Directory**: A comprehensive list of road assets with advanced search (by name, area, contractor, or condition).
-- **Diagnostic Scans (Reporting)**: Capture structural damage reports (potholes, erosion, waterlogging) with:
-    - **CameraX Integration**: Attach high-resolution visual evidence.
-    - **GPS Telemetry**: Automatic coordinate capture for precise damage location.
-- **Detailed Road Metrics**: Deep-dive into specific road segments including:
-    - Pothole counts & Traffic flow analysis.
-    - Streetlight & Drainage integrity status.
-    - Estimated restoration costs.
-    - Contractor information and warranty tracking.
-- **PDF Health Certificates**: Export professional road health reports for offline sharing and documentation.
-- **Live Damage Map**: Visual representation of reported issues across the city (via Google Maps).
+**Namma-Raste Health** is a smart Android-based infrastructure monitoring application developed to digitally assess, monitor, and manage the structural health of roads across Bengaluru.
+
+The application enables authorities and users to:
+- Register road assets
+- Capture road damage reports with visual evidence
+- Track infrastructure conditions using telemetry data
+- Visualize city-wide damage distribution on maps
+- Generate analytical insights for maintenance prioritization
+
+The platform combines geospatial intelligence, damage diagnostics, and real-time infrastructure analytics into a unified mobile solution.
 
 ---
 
-## 🛠 Tech Stack
+# 📱 Application Screenshots
 
-- **Language**: Kotlin
-- **Architecture**: MVVM (Model-ViewModel-View)
-- **UI Framework**: Material Design 3 (Material Components)
-- **Jetpack Libraries**:
-    - **ViewBinding**: Type-safe view interaction.
-    - **Navigation Component**: Simplified fragment-based navigation with SafeArgs.
-    - **Room Database**: Local persistent storage with migration support.
-    - **ViewModel & LiveData**: Reactive data handling and lifecycle management.
-    - **CameraX**: Camera integration for damage evidence.
-- **External Dependencies**:
-    - **Google Play Services**: Maps and Fused Location Provider.
-    - **MPAndroidChart**: Statistical data visualization on the dashboard.
-    - **Coroutines**: Asynchronous programming for database and PDF operations.
+## 🏙 City Health Dashboard
+
+<p align="center">
+  <img src="screenshots/dashboard.png" width="260"/>
+</p>
+
+Provides a real-time overview of road infrastructure statistics including:
+- Total roads monitored
+- Open maintenance cases
+- Damage severity indicators
+- Traffic and infrastructure metrics
 
 ---
 
-## 🏗 Project Structure
+## 🛣 Infrastructure Directory
+
+<p align="center">
+  <img src="screenshots/infrastructure_directory.png" width="260"/>
+</p>
+
+Enables:
+- Road asset registration
+- Advanced infrastructure search
+- Maintenance classification
+- Operational status tracking
+
+---
+
+## 🔍 Diagnostic Scan System
+
+<p align="center">
+  <img src="screenshots/diagnostic_scan.png" width="260"/>
+</p>
+
+Integrated damage reporting system featuring:
+- CameraX image capture
+- GPS telemetry
+- Damage classification
+- Incident documentation
+- Structural analysis logging
+
+---
+
+## 🗺 Live Damage Map
+
+<p align="center">
+  <img src="screenshots/live_damage_map.png" width="260"/>
+</p>
+
+Google Maps powered visualization system for:
+- Real-time issue tracking
+- Damage hotspot analysis
+- Geographical infrastructure monitoring
+- Maintenance coordination
+
+---
+
+## 📊 Infrastructure Quality Rankings
+
+<p align="center">
+  <img src="screenshots/safety_rankings.png" width="260"/>
+</p>
+
+Ranks infrastructure quality based on:
+- Damage severity
+- Traffic load
+- Structural degradation
+- Repair urgency metrics
+
+---
+
+# 🚀 Core Features
+
+## ✅ Smart Infrastructure Monitoring
+Track and monitor road conditions through a centralized digital platform.
+
+## ✅ Real-Time Damage Reporting
+Submit structural damage reports with:
+- GPS coordinates
+- Camera evidence
+- Damage category tagging
+- Timestamp logging
+
+## ✅ Infrastructure Analytics
+Analyze:
+- Traffic intensity
+- Pothole density
+- Maintenance trends
+- Infrastructure deterioration
+
+## ✅ Google Maps Integration
+Visualize road assets and incidents geographically using interactive mapping.
+
+## ✅ PDF Report Generation
+Generate professional infrastructure health certificates and maintenance summaries.
+
+## ✅ Telemetry-Based Assessment
+Evaluate infrastructure using multiple operational metrics and scoring systems.
+
+---
+
+# 🛠 Tech Stack
+
+| Category | Technology |
+|---|---|
+| Language | Kotlin |
+| Architecture | MVVM |
+| UI Framework | Material Design 3 |
+| Database | Room Database |
+| Navigation | Jetpack Navigation Component |
+| Async Operations | Kotlin Coroutines |
+| Maps | Google Maps SDK |
+| Location Services | Fused Location Provider |
+| Camera Integration | CameraX |
+| Charts & Analytics | MPAndroidChart |
+| UI Binding | ViewBinding |
+
+---
+
+# 🏗 Architecture Overview
+
+The application follows the **MVVM (Model-View-ViewModel)** architecture pattern for scalable and maintainable Android development.
 
 ```text
 com.nammaraste.health
+│
 ├── data
 │   ├── local
-│   │   ├── dao        # Room DAOs (RoadDao, DamageReportDao)
-│   │   ├── entity     # Data classes (Road, DamageReport)
-│   │   └── NammaRasteDatabase.kt # Database configuration & migrations
-│   └── repository     # Single source of truth for data operations
+│   │   ├── dao
+│   │   ├── entity
+│   │   └── database
+│   │
+│   └── repository
+│
 ├── ui
-│   ├── dashboard      # Overview charts and stats
-│   ├── roads          # Road list and adapters
-│   ├── report         # Diagnostic scan / reporting form
-│   ├── detail         # Road metrics and incident logs
-│   └── addroad        # Asset registration
-└── util               # Helpers for PDF generation, Health scoring, etc.
+│   ├── dashboard
+│   ├── roads
+│   ├── report
+│   ├── detail
+│   ├── rankings
+│   └── map
+│
+├── viewmodel
+│
+└── util
 ```
 
 ---
 
-## 🗄 Database & Migrations
+# 🗄 Database System
 
-The app utilizes a Room database (`namma_raste_db`) with versioned migrations to support evolving data requirements.
-- **Current Version**: 7
-- **Key Tables**: `roads`, `damage_reports`, `routes`.
-- **Migration 6 -> 7**: Added 12 telemetry fields including `potholeCount`, `avgTrafficPerDay`, `accidentRiskScore`, and `estimatedRepairCostInr`.
+The application uses **Room Database** for local persistent storage with migration support.
 
----
+### Key Tables
+- `roads`
+- `damage_reports`
+- `routes`
+- `maintenance_logs`
 
-## ⚙️ Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/NammaRasteHealth.git
-   ```
-2. **Open in Android Studio**:
-   - Use Android Studio Ladybug (2024.2.1) or newer.
-   - Gradle JDK: Java 17+.
-3. **Configure API Keys**:
-   - Add your Google Maps API key in `local.properties` or directly in `AndroidManifest.xml` (for development).
-4. **Build and Run**:
-   - Sync Gradle and run the `:app` module on an emulator or physical device (Min SDK 26).
+### Infrastructure Metrics Captured
+- Pothole count
+- Traffic flow
+- Structural crack severity
+- Accident risk score
+- Drainage condition
+- Estimated repair cost
+- Maintenance status
 
 ---
 
-## 📄 License
+# ⚙️ Installation Guide
 
-Copyright © 2025 NammaRaste. All rights reserved.
-Developed for Bengaluru's Urban Infrastructure Monitoring.
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/Nidhirk2113/Namma-Raste-Health.git
+```
+
+---
+
+## 2️⃣ Open in Android Studio
+
+Recommended:
+- Android Studio Ladybug / Panda or newer
+- JDK 17+
+
+---
+
+## 3️⃣ Configure Google Maps API
+
+Add your API key inside:
+
+```properties
+local.properties
+```
+
+Example:
+
+```properties
+MAPS_API_KEY=YOUR_API_KEY
+```
+
+---
+
+## 4️⃣ Build & Run
+
+- Sync Gradle
+- Connect emulator/device
+- Run `app` module
+
+Minimum SDK Supported:
+- Android 8.0 (API 26)
+
+---
+
+# 📈 Future Enhancements
+
+- AI-based pothole detection using TensorFlow Lite
+- Cloud synchronization with Firebase
+- Predictive maintenance analytics
+- IoT sensor integration
+- Government maintenance dashboard
+- Offline-first synchronization
+- Live citizen reporting portal
+
+---
+
+# 🎯 Project Objectives
+
+- Improve urban road maintenance efficiency
+- Digitize infrastructure monitoring workflows
+- Reduce manual inspection overhead
+- Enable faster maintenance prioritization
+- Provide data-driven infrastructure insights
+
+---
+
+# 🔐 Permissions Used
+
+| Permission | Purpose |
+|---|---|
+| Camera | Capture damage evidence |
+| Location | GPS telemetry |
+| Storage | Save reports & PDFs |
+| Internet | Maps & cloud services |
+
+---
+
+# 👨‍💻 Developed With
+
+- Kotlin
+- Android Jetpack
+- Material Design Principles
+- Google Maps Platform
+
+---
+
+# 📄 License
+
+Copyright © 2026 Namma-Raste Health
+
+Developed for smart urban infrastructure monitoring and road safety analytics in Bengaluru.
+
+All rights reserved.
