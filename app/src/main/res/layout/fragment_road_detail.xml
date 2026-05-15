@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- ── HEALTH SCORE CARD ── -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface_grey"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvDetailRoadName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Road Name"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_white"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:id="@+id/tvDetailRoadCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID: BLR-001"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorTextSecondary"
+                    android:layout_marginBottom="24dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:id="@+id/tvDetailScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textSize="48sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brand_yellow"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="%"
+                        android:textSize="24sp"
+                        android:textColor="@color/brand_yellow"
+                        android:layout_marginEnd="20dp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvDetailHealthLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Good Condition"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_white"
+                            android:layout_marginBottom="8dp"/>
+
+                        <ProgressBar
+                            android:id="@+id/pbDetailHealth"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:max="100"
+                            android:progress="100"
+                            android:progressDrawable="@drawable/progress_health"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Status Badges -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:id="@+id/tvDetailCondition"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OPERATIONAL"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
+                        android:background="@drawable/bg_badge_green"
+                        android:textColor="@color/brand_black"
+                        android:layout_marginEnd="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tvDetailWarranty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WARRANTY ACTIVE"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/brand_black"
+                        android:background="@drawable/bg_badge_amber"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"/>
+
+                </LinearLayout>
+
+                <!-- Actions -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEditRoad"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:text="EDIT"
+                        app:backgroundTint="#2A2A2A"
+                        android:textColor="@color/text_white"
+                        android:layout_marginEnd="8dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnDeleteRoad"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:text="DELETE"
+                        app:backgroundTint="#3D1D1D"
+                        android:textColor="@color/colorHealthDanger"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExportPdf"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="EXPORT HEALTH CERTIFICATE"
+                    android:textColor="@color/brand_black"
+                    app:backgroundTint="@color/brand_yellow"
+                    app:cornerRadius="12dp"
+                    android:layout_marginTop="12dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── ASSET DATA ── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ASSET SPECIFICATIONS"
+            android:textSize="12sp"
+            android:textColor="@color/brand_yellow"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp"
+            android:paddingStart="4dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface_grey"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Area" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailDistrict" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Road Type" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailTaluka" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Surface Type" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailHobli" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Asset Length" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailLength" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Lanes" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailYear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Last Inspection" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailScheme" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── TELEMETRY & RISK ── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HEALTH TELEMETRY"
+            android:textSize="12sp"
+            android:textColor="@color/brand_yellow"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="12dp"
+            android:paddingStart="4dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface_grey"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Detected Issues" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailPotholes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/colorHealthDanger" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Daily Traffic Flow" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailTraffic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Structural Risk Level" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailRisk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/brand_yellow" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Streetlight Availability" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailStreetlight" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Drainage Integrity" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailDrainage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Est. Restoration Cost" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailRepairCost" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/brand_yellow" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── MAINTENANCE ENTITY ── -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface_grey"
+            android:layout_marginBottom="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MAINTENANCE ENTITY"
+                    android:textSize="12sp"
+                    android:textColor="@color/brand_yellow"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="16dp"/>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Entity Name" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailContractorName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="License Number" android:textColor="@color/colorTextSecondary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tvDetailLicense" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="—" android:textColor="@color/text_white" android:textSize="14sp" android:textStyle="bold"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCallContractor"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="CONTACT ENTITY"
+                    android:textColor="@color/brand_black"
+                    app:backgroundTint="@color/brand_yellow"
+                    app:cornerRadius="12dp"
+                    android:layout_marginTop="12dp"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── INCIDENT HISTORY ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:paddingHorizontal="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="INCIDENT LOGS"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/brand_yellow"
+                android:letterSpacing="0.1"/>
+
+            <TextView
+                android:id="@+id/tvReportCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 ACTIVE"
+                android:textSize="12sp"
+                android:textColor="@color/colorHealthDanger"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutNoReports"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="40dp"
+            android:background="@drawable/bg_floating_nav"
+            android:backgroundTint="@color/surface_grey"
+            android:visibility="gone">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No Integrity Violations" android:textSize="14sp" android:textColor="@color/colorTextSecondary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutReportsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="@android:color/transparent"
+            android:showDividers="middle"
+            android:dividerHeight="12dp"/>
+
+        <!-- Bottom Spacing -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+    </LinearLayout>
+</ScrollView>

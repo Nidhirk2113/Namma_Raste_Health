@@ -1,0 +1,20 @@
+<resources>
+    <style name="Theme.NammaRasteHealth" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/brand_yellow</item>
+        <item name="colorOnPrimary">@color/brand_black</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/brand_black</item>
+
+        <!-- Background and Surface -->
+        <item name="android:windowBackground">@color/brand_black</item>
+        <item name="colorSurface">@color/surface_grey</item>
+        <item name="colorOnSurface">@color/text_white</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/brand_black</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

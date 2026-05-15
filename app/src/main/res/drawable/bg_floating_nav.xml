@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background: Dark grey/Black surface for the bar -->
+    <!-- Using @color/surface_grey as defined in your color palette -->
+    <solid android:color="@color/surface_grey" />
+
+    <!-- Rounded corners: 28dp for a smooth pill-shaped floating effect -->
+    <corners android:radius="28dp" />
+
+    <!-- Border: High-visibility yellow stroke to pop against the black background -->
+    <stroke
+        android:width="1.5dp"
+        android:color="@color/brand_yellow" />
+
+</shape>

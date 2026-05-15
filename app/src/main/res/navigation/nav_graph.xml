@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.nammaraste.health.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"/>
+
+    <fragment
+        android:id="@+id/roadsFragment"
+        android:name="com.nammaraste.health.ui.roads.RoadsFragment"
+        android:label="Roads">
+        <action
+            android:id="@+id/action_roadsFragment_to_roadDetailFragment"
+            app:destination="@id/roadDetailFragment"/>
+        <action
+            android:id="@+id/action_roadsFragment_to_addRoadFragment"
+            app:destination="@id/addRoadFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.nammaraste.health.ui.report.ReportFragment"
+        android:label="Report Damage"/>
+
+    <fragment
+        android:id="@+id/rankingsFragment"
+        android:name="com.nammaraste.health.ui.rankings.RankingsFragment"
+        android:label="Rankings"/>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.nammaraste.health.ui.map.MapFragment"
+        android:label="Map View"/>
+
+    <fragment
+        android:id="@+id/addRoadFragment"
+        android:name="com.nammaraste.health.ui.addroad.AddRoadFragment"
+        android:label="Add Road">
+        <!-- roadId = -1 means ADD mode. Any positive number = EDIT mode -->
+        <argument
+            android:name="roadId"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/roadDetailFragment"
+        android:name="com.nammaraste.health.ui.detail.RoadDetailFragment"
+        android:label="Road Detail">
+        <argument
+            android:name="roadId"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_roadDetailFragment_to_addRoadFragment"
+            app:destination="@id/addRoadFragment"/>
+    </fragment>
+
+</navigation>

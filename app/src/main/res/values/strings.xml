@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Namma-Raste Health</string>
+
+    <!-- Damage types -->
+    <string-array name="damage_types">
+        <item>Pothole</item>
+        <item>Water Logging</item>
+        <item>Road Erosion</item>
+        <item>Clogged Drain</item>
+        <item>Overload Damage</item>
+        <item>Surface Crack</item>
+        <item>Missing Signage</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Scheme types -->
+    <string-array name="scheme_types">
+        <item>PMGSY-I</item>
+        <item>PMGSY-II</item>
+        <item>PMGSY-III</item>
+        <item>State Built Road</item>
+        <item>Municipal Authority</item>
+        <item>Other</item>
+    </string-array>
+</resources>

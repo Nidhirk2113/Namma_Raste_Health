@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/surface_grey"
+    app:strokeWidth="1dp"
+    app:strokeColor="#2A2A2A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Top row: damage type + resolved badge -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/tvDamageType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Pothole"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_white"/>
+
+            <TextView
+                android:id="@+id/tvResolvedBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OPEN INCIDENT"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/bg_badge_red"
+                android:textColor="@color/brand_black"/>
+
+        </LinearLayout>
+
+        <!-- Description -->
+        <TextView
+            android:id="@+id/tvDamageDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Damage description details..."
+            android:textSize="14sp"
+            android:textColor="@color/colorTextSecondary"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingExtra="2dp"/>
+
+        <!-- Photo thumbnail (if exists) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardDamagePhoto"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/ivDamagePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:background="#121212"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- GPS + Timestamp row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tvDamageLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📍 12.9716, 77.5946"
+                android:textSize="12sp"
+                android:textColor="@color/brand_yellow"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvDamageTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24 OCT 2023"
+                android:textSize="11sp"
+                android:textColor="@color/colorTextSecondary"/>
+
+        </LinearLayout>
+
+        <!-- Mark as repaired button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMarkRepaired"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="RESOLVE INCIDENT"
+            android:textColor="@color/brand_black"
+            android:textStyle="bold"
+            app:backgroundTint="@color/brand_yellow"
+            app:cornerRadius="12dp"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

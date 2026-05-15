@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brand_black"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DIAGNOSTIC SCAN"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_white"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit structural damage report for assessment"
+            android:textSize="13sp"
+            android:textColor="@color/colorTextSecondary"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Select Road -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TARGET ASSET"
+            android:textSize="12sp"
+            android:textColor="@color/brand_yellow"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="10dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSelectRoad"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Identify Road Asset"
+            app:boxStrokeColor="@color/brand_yellow"
+            app:hintTextColor="@color/brand_yellow"
+            app:boxBackgroundColor="@color/surface_grey"
+            android:layout_marginBottom="24dp">
+            <AutoCompleteTextView
+                android:id="@+id/actvRoad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/text_white"
+                android:focusable="false"
+                android:paddingVertical="16dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Damage Type -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DAMAGE CLASSIFICATION"
+            android:textSize="12sp"
+            android:textColor="@color/brand_yellow"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="10dp"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupDamageType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPothole"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pothole"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/surface_grey"
+                app:chipStrokeColor="@color/brand_yellow"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipWaterLogging"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Water Logging"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/surface_grey"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipErosion"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Surface Erosion"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/surface_grey"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCrack"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Structural Crack"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/surface_grey"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipCloggedDrain"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clogged Drain"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/surface_grey"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipOverload"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Overload Damage"
+                android:textColor="@color/text_white"
+                app:chipBackgroundColor="@color/surface_grey"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/tvDamageTypeError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Classification required"
+            android:textColor="@color/colorHealthDanger"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Photo Capture -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VISUAL EVIDENCE"
+            android:textSize="12sp"
+            android:textColor="@color/brand_yellow"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="10dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface_grey"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivPhotoPreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"/>
+
+                <LinearLayout
+                    android:id="@+id/layoutCameraPrompt"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_camera_box">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@android:drawable/ic_menu_camera"
+                        app:tint="@color/brand_yellow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CAPTURE EVIDENCE"
+                        android:textSize="13sp"
+                        android:textColor="@color/brand_yellow"
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCapture"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Open Lens System"
+                    android:textColor="@color/brand_yellow"
+                    android:layout_margin="8dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvPhotoError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Evidence photo required"
+            android:textColor="@color/colorHealthDanger"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Metadata -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TELEMETRY DATA"
+            android:textSize="12sp"
+            android:textColor="@color/brand_yellow"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="10dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface_grey"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="GPS Coordinates"
+                        android:textColor="@color/text_white"
+                        android:textSize="13sp"/>
+                    <TextView
+                        android:id="@+id/tvGpsStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Acquiring Signal..."
+                        android:textColor="@color/brand_yellow"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Diagnostic Timestamp"
+                        android:textColor="@color/text_white"
+                        android:textSize="13sp"/>
+                    <TextView
+                        android:id="@+id/tvTimestamp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sync on submit"
+                        android:textColor="@color/colorTextSecondary"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Description -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilDescription"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Structural Analysis Notes"
+            app:boxStrokeColor="@color/brand_yellow"
+            app:hintTextColor="@color/brand_yellow"
+            app:boxBackgroundColor="@color/surface_grey"
+            android:layout_marginBottom="32dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:textColor="@color/text_white"
+                android:gravity="top"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Submit Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitReport"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="SUBMIT SCAN REPORT"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/brand_black"
+            app:backgroundTint="@color/brand_yellow"
+            app:cornerRadius="20dp"
+            android:layout_marginBottom="40dp"/>
+
+    </LinearLayout>
+</ScrollView>
