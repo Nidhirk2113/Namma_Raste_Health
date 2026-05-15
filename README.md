@@ -1,14 +1,12 @@
 # Namma-Raste Health 🛣️
 
-**Namma-Raste Health** is an AI-assisted Android application developed to modernize the monitoring, assessment, and maintenance of urban road infrastructure in Bengaluru. The platform is designed to digitally transform conventional road inspection workflows by combining infrastructure analytics, geospatial intelligence, and telemetry-based monitoring into a centralized mobile solution.
+## 📌 Overview
 
-Urban road maintenance often relies on manual inspections, delayed reporting systems, and fragmented infrastructure records, leading to inefficient maintenance planning and slower response times. Namma-Raste Health addresses these challenges by enabling authorities and infrastructure teams to perform real-time road condition assessment, damage reporting, and maintenance prioritization directly from mobile devices.
+**Namma-Raste Health** is a modern Android application developed to digitally monitor and manage the structural health of road infrastructure across Bengaluru. The platform combines infrastructure analytics, GPS telemetry, and real-time damage reporting to help authorities identify, assess, and prioritize road maintenance activities more efficiently.
 
-The application provides a comprehensive ecosystem for monitoring road health across multiple operational parameters such as pothole density, traffic exposure, drainage condition, accident risk, structural degradation, and maintenance urgency. Using integrated GPS telemetry and CameraX-based image capture, users can report road damage incidents with precise location data and visual evidence, ensuring accurate infrastructure documentation and faster issue resolution.
+The application enables users to register road assets, capture structural damage reports with visual evidence, and analyze infrastructure conditions using telemetry-based health metrics such as pothole density, traffic exposure, drainage condition, and maintenance urgency. Integrated Google Maps support allows real-time visualization of reported issues and infrastructure hotspots across the city.
 
-The platform also incorporates a live infrastructure visualization system powered by Google Maps, allowing users to geographically monitor road conditions, identify damage hotspots, and analyze city-wide infrastructure trends. Through analytical dashboards and telemetry-driven scoring mechanisms, authorities can evaluate infrastructure quality and optimize maintenance resource allocation using data-driven insights.
-
-Built using modern Android development practices including MVVM architecture, Room Database, Kotlin Coroutines, and Material Design 3, the application emphasizes scalability, maintainability, and operational efficiency. Namma-Raste Health demonstrates how mobile technology and intelligent infrastructure analytics can contribute toward smarter urban governance, improved road safety, and more sustainable city infrastructure management.
+Built using Kotlin, MVVM architecture, Room Database, CameraX, and Material Design 3, Namma-Raste Health provides a scalable and data-driven solution for improving urban infrastructure monitoring, maintenance planning, and road safety management.
 
 ---
 
