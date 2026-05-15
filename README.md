@@ -1,5 +1,13 @@
 # Namma-Raste Health 🛣️
 
+<p align="center">
+  <b>AI-Powered Road Infrastructure Monitoring System for Bengaluru</b>
+</p>
+
+<p align="center">
+  Monitor • Analyze • Report • Improve
+</p>
+
 ## 📌 Overview
 
 **Namma-Raste Health** is a modern Android application developed to digitally monitor and manage the structural health of road infrastructure across Bengaluru. The platform combines infrastructure analytics, GPS telemetry, and real-time damage reporting to help authorities identify, assess, and prioritize road maintenance activities more efficiently.
