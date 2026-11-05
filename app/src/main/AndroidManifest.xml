@@ -10,6 +10,7 @@
         android:maxSdkVersion="28" />
 
     <application
+        android:hardwareAccelerated="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Namma-Raste Health"
@@ -44,7 +45,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="Your-Google-maps-API_key"/>
+            android:value="${MAPS_API_KEY}"/>
 
     </application>
 
