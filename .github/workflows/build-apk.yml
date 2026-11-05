@@ -36,7 +36,14 @@ jobs:
           gradle-version: '8.11.1'
 
       - name: Build Debug APK
-        run: gradle --no-daemon :app:assembleDebug
+        env:
+          MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
+        run: |
+          if [ -z "$MAPS_API_KEY" ]; then
+            echo "::error::Add MAPS_API_KEY in GitHub repository secrets before building."
+            exit 1
+          fi
+          gradle --no-daemon :app:assembleDebug -PMAPS_API_KEY="$MAPS_API_KEY"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
